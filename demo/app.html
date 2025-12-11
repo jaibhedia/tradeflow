@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradeFlow - MLETR Trade Finance Protocol</title>
+    <link rel="stylesheet" href="app-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <rect width="32" height="32" rx="8" fill="url(#gradient)"/>
+                    <path d="M16 8L22 16L16 24L10 16L16 8Z" fill="white" opacity="0.9"/>
+                    <defs>
+                        <linearGradient id="gradient" x1="0" y1="0" x2="32" y2="32">
+                            <stop offset="0%" stop-color="#667eea"/>
+                            <stop offset="100%" stop-color="#764ba2"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span>TradeFlow</span>
+            </div>
+            <div class="header-right">
+                <div class="network-badge">
+                    <div class="network-dot"></div>
+                    Sepolia
+                </div>
+                <button class="connect-btn" id="connectBtn">
+                    <span class="wallet-icon">⚡</span>
+                    Connect Wallet
+                </button>
+            </div>
+        </header>
+
+        <!-- Stats Bar -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Total Value Locked</div>
+                <div class="stat-value">$12.4M</div>
+                <div class="stat-change positive">+8.2%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Active Assets</div>
+                <div class="stat-value">247</div>
+                <div class="stat-change positive">+12</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Avg. APY</div>
+                <div class="stat-value">7.3%</div>
+                <div class="stat-change positive">+0.4%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Liquidation Health</div>
+                <div class="stat-value">98.2%</div>
+                <div class="stat-change positive">Healthy</div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-grid">
+            <!-- Left Panel - Trade Assets -->
+            <div class="panel">
+                <div class="panel-header">
+                    <h2>Your Trade Assets</h2>
+                    <button class="add-btn" id="addAssetBtn">+ Add Asset</button>
+                </div>
+                
+                <div class="assets-list" id="assetsList">
+                    <!-- Asset cards will be populated by JS -->
+                </div>
+            </div>
+
+            <!-- Right Panel - Risk & Fees -->
+            <div class="panel">
+                <div class="panel-header">
+                    <h2>Risk Dashboard</h2>
+                </div>
+                
+                <!-- Risk Score -->
+                <div class="risk-section">
+                    <div class="risk-header">
+                        <span>Composite Risk Score</span>
+                        <span class="risk-value" id="riskScore">4,250</span>
+                    </div>
+                    <div class="risk-bar">
+                        <div class="risk-fill" id="riskFill" style="width: 28%;"></div>
+                    </div>
+                    <div class="risk-labels">
+                        <span>Low</span>
+                        <span>Medium</span>
+                        <span>High</span>
+                    </div>
+                </div>
+
+                <!-- Dynamic Fee Calculator -->
+                <div class="fee-section">
+                    <h3>Dynamic Fee</h3>
+                    <div class="fee-display">
+                        <div class="fee-percentage" id="feePercentage">0.28%</div>
+                        <div class="fee-breakdown">
+                            <div class="fee-item">
+                                <span>Base Fee</span>
+                                <span>0.10%</span>
+                            </div>
+                            <div class="fee-item">
+                                <span>Risk Premium</span>
+                                <span id="riskPremium">+0.18%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health Factor -->
+                <div class="health-section">
+                    <h3>Collateral Health</h3>
+                    <div class="health-display">
+                        <div class="health-gauge">
+                            <svg viewBox="0 0 200 120">
+                                <path d="M20,100 A80,80 0 0,1 180,100" fill="none" stroke="#f0f0f0" stroke-width="20"/>
+                                <path id="healthArc" d="M20,100 A80,80 0 0,1 180,100" fill="none" stroke="url(#healthGradient)" stroke-width="20" stroke-dasharray="251.2" stroke-dashoffset="50.24"/>
+                                <text x="100" y="85" text-anchor="middle" class="health-value" id="healthValue">142%</text>
+                                <defs>
+                                    <linearGradient id="healthGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#10b981"/>
+                                        <stop offset="100%" stop-color="#34d399"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="health-details">
+                            <div class="health-item">
+                                <span>Collateral</span>
+                                <span id="collateralValue">$142,000</span>
+                            </div>
+                            <div class="health-item">
+                                <span>Debt</span>
+                                <span id="debtValue">$100,000</span>
+                            </div>
+                            <div class="health-item">
+                                <span>Liquidation At</span>
+                                <span class="warning">80%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pool Stats -->
+        <div class="pool-panel">
+            <div class="panel-header">
+                <h2>Active Pools</h2>
+                <div class="tabs">
+                    <button class="tab active">All</button>
+                    <button class="tab">Invoices</button>
+                    <button class="tab">Letters of Credit</button>
+                    <button class="tab">Receivables</button>
+                </div>
+            </div>
+            <div class="pools-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pool</th>
+                            <th>Asset Type</th>
+                            <th>TVL</th>
+                            <th>APY</th>
+                            <th>Risk Score</th>
+                            <th>Maturity</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="poolsTable">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Adding Assets -->
+    <div class="modal" id="addAssetModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Register Trade Asset</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <form class="asset-form" id="assetForm">
+                <div class="form-group">
+                    <label>Asset Type</label>
+                    <select id="assetType">
+                        <option value="INVOICE">Invoice</option>
+                        <option value="BILL_OF_LADING">Bill of Lading</option>
+                        <option value="LETTER_OF_CREDIT">Letter of Credit</option>
+                        <option value="RECEIVABLE">Trade Receivable</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Face Value (USD)</label>
+                    <input type="number" id="faceValue" placeholder="100,000" required>
+                </div>
+                <div class="form-group">
+                    <label>Credit Score (0-100)</label>
+                    <input type="range" id="creditScore" min="0" max="100" value="75">
+                    <span class="score-display" id="scoreDisplay">75</span>
+                </div>
+                <div class="form-group">
+                    <label>Maturity Date</label>
+                    <input type="date" id="maturityDate" required>
+                </div>
+                <div class="form-group">
+                    <label>Jurisdiction</label>
+                    <select id="jurisdiction">
+                        <option value="US">United States</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="SG">Singapore</option>
+                        <option value="HK">Hong Kong</option>
+                        <option value="EU">European Union</option>
+                    </select>
+                </div>
+                <div class="kyc-badge">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="#10b981">
+                        <path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm-2 15l-5-5 1.41-1.41L8 12.17l7.59-7.59L17 6l-9 9z"/>
+                    </svg>
+                    <span>KYC/AML Verified</span>
+                </div>
+                <button type="submit" class="submit-btn">Register Asset</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app-script.js"></script>
+</body>
+</html>

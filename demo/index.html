@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradeFlow - Decentralized Trade Finance Protocol</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <rect width="40" height="40" rx="10" fill="url(#navGradient)"/>
+                    <path d="M20 10L26 20L20 30L14 20L20 10Z" fill="white" opacity="0.9"/>
+                    <defs>
+                        <linearGradient id="navGradient" x1="0" y1="0" x2="40" y2="40">
+                            <stop offset="0%" stop-color="#667eea"/>
+                            <stop offset="100%" stop-color="#764ba2"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="nav-brand">TradeFlow</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#pools">Pools</a>
+                <a href="#docs">Docs</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-secondary" onclick="window.location.href='app.html'">Launch App</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="grid-overlay"></div>
+            <div class="gradient-blob blob-1"></div>
+            <div class="gradient-blob blob-2"></div>
+            <div class="gradient-blob blob-3"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-badge">
+                Powered by Uniswap V4 Hooks
+            </div>
+            
+            <h1 class="hero-title">
+                Decentralized Liquidity<br/>
+                for <span class="gradient-text">Trade Finance</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                Access instant liquidity for invoices, letters of credit, and trade receivables.<br/>
+                Risk-based pricing. Automated protection. MLETR compliant.
+            </p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-value">$12.4M</div>
+                    <div class="stat-label">Total Value Locked</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-value">7.3%</div>
+                    <div class="stat-label">Average APY</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-value">247</div>
+                    <div class="stat-label">Active Assets</div>
+                </div>
+            </div>
+            
+            <div class="hero-cta">
+                <button class="btn-primary" onclick="window.location.href='app.html'">
+                    <span>Enter App</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 0L8.59 1.41L16.17 9H0v2h16.17l-7.58 7.59L10 20l10-10L10 0z"/>
+                    </svg>
+                </button>
+                <button class="btn-outline" onclick="scrollToSection('how-it-works')">
+                    Learn More
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why TradeFlow?</h2>
+                <p class="section-subtitle">Built for the $9 trillion global trade finance market</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect width="48" height="48" rx="12" fill="rgba(102, 126, 234, 0.1)"/>
+                            <path d="M24 14L30 24L24 34L18 24L24 14Z" stroke="#667eea" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>Risk-Based Pricing</h3>
+                    <p>Dynamic fees (0.1%-3%) adjust automatically based on credit score, maturity risk, and payment history.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect width="48" height="48" rx="12" fill="rgba(16, 185, 129, 0.1)"/>
+                            <path d="M16 24L22 30L32 18" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>MLETR Compliant</h3>
+                    <p>Built with regulatory compliance in mind. Jurisdiction validation and KYC/AML enforcement via attestations.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect width="48" height="48" rx="12" fill="rgba(245, 158, 11, 0.1)"/>
+                            <circle cx="24" cy="24" r="8" stroke="#f59e0b" stroke-width="2" fill="none"/>
+                            <path d="M24 16V24L28 28" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Instant Settlement</h3>
+                    <p>Convert trade assets to liquidity instantly instead of waiting 30-90 days for traditional financing.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect width="48" height="48" rx="12" fill="rgba(139, 92, 246, 0.1)"/>
+                            <rect x="14" y="20" width="20" height="14" rx="2" stroke="#8b5cf6" stroke-width="2" fill="none"/>
+                            <path d="M18 20V16C18 14.8954 18.8954 14 20 14H28C29.1046 14 30 14.8954 30 16V20" stroke="#8b5cf6" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Automated Protection</h3>
+                    <p>Smart liquidation with max 20% gradual conversion. Real-time health monitoring prevents cascading losses.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect width="48" height="48" rx="12" fill="rgba(236, 72, 153, 0.1)"/>
+                            <path d="M14 18L24 14L34 18V28C34 30 32 32 24 34C16 32 14 30 14 28V18Z" stroke="#ec4899" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>Multi-Asset Support</h3>
+                    <p>Invoices, bills of lading, letters of credit, and trade receivables all supported with unified liquidity.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect width="48" height="48" rx="12" fill="rgba(59, 130, 246, 0.1)"/>
+                            <path d="M14 24L20 30L34 16" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="24" cy="24" r="12" stroke="#3b82f6" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>Uniswap V4 Native</h3>
+                    <p>Built as a hook on Uniswap V4. No protocol fork needed. Leverages battle-tested infrastructure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Simple, transparent, and automated</p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Register Trade Asset</h3>
+                        <p>Upload your invoice, letter of credit, or receivable. Complete KYC verification and jurisdiction compliance.</p>
+                        <div class="step-visual">
+                            <div class="asset-preview">
+                                <div class="asset-icon">📄</div>
+                                <div class="asset-info">
+                                    <div class="asset-type">Invoice</div>
+                                    <div class="asset-amount">$100,000</div>
+                                </div>
+                                <div class="verified-badge">✓ Verified</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step-connector"></div>
+                
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Risk Assessment</h3>
+                        <p>Our algorithm calculates composite risk based on credit score, maturity, and payment history. Get instant fee quote.</p>
+                        <div class="step-visual">
+                            <div class="risk-calculator">
+                                <div class="risk-item">
+                                    <span>Credit Risk</span>
+                                    <span class="risk-value">1,500</span>
+                                </div>
+                                <div class="risk-item">
+                                    <span>Maturity Risk</span>
+                                    <span class="risk-value">0</span>
+                                </div>
+                                <div class="risk-divider"></div>
+                                <div class="risk-total">
+                                    <span>Total Fee</span>
+                                    <span class="fee-value">0.28%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step-connector"></div>
+                
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Add Liquidity</h3>
+                        <p>Choose a pool matching your risk profile. Earn yield while providing liquidity for trade finance.</p>
+                        <div class="step-visual">
+                            <div class="pool-selector">
+                                <div class="pool-option">
+                                    <div class="pool-name">Premium Invoice Pool</div>
+                                    <div class="pool-stats">
+                                        <span class="pool-apy">8.2% APY</span>
+                                        <span class="pool-risk low">Low Risk</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step-connector"></div>
+                
+                <div class="step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Automated Monitoring</h3>
+                        <p>Health factors update in real-time. Soft liquidation protects against defaults with max 20% gradual conversion.</p>
+                        <div class="step-visual">
+                            <div class="health-monitor">
+                                <div class="health-gauge-mini">
+                                    <svg viewBox="0 0 100 60">
+                                        <path d="M10,50 A40,40 0 0,1 90,50" fill="none" stroke="#2d3142" stroke-width="8"/>
+                                        <path d="M10,50 A40,40 0 0,1 90,50" fill="none" stroke="#10b981" stroke-width="8" stroke-dasharray="125.6" stroke-dashoffset="25"/>
+                                        <text x="50" y="42" text-anchor="middle" fill="#10b981" font-size="18" font-weight="700">142%</text>
+                                    </svg>
+                                </div>
+                                <div class="health-status">Healthy</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid-large">
+                <div class="stat-card-large">
+                    <div class="stat-number" data-target="12400000">$0</div>
+                    <div class="stat-desc">Total Value Locked</div>
+                </div>
+                <div class="stat-card-large">
+                    <div class="stat-number" data-target="247">0</div>
+                    <div class="stat-desc">Active Trade Assets</div>
+                </div>
+                <div class="stat-card-large">
+                    <div class="stat-number" data-target="12">0</div>
+                    <div class="stat-desc">Supported Countries</div>
+                </div>
+                <div class="stat-card-large">
+                    <div class="stat-number" data-target="98">0%</div>
+                    <div class="stat-desc">Liquidation Health</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to transform trade finance?</h2>
+                <p>Join the decentralized trade finance revolution. Access liquidity instantly.</p>
+                <div class="cta-buttons">
+                    <button class="btn-primary-large" onclick="window.location.href='app.html'">
+                        Launch App
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0L10.59 1.41L19.17 10H0v2h19.17l-8.58 8.59L12 22l12-12L12 0z"/>
+                        </svg>
+                    </button>
+                    <button class="btn-outline-large">
+                        Read Documentation
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect width="32" height="32" rx="8" fill="url(#footerGradient)"/>
+                            <path d="M16 8L22 16L16 24L10 16L16 8Z" fill="white" opacity="0.9"/>
+                            <defs>
+                                <linearGradient id="footerGradient" x1="0" y1="0" x2="32" y2="32">
+                                    <stop offset="0%" stop-color="#667eea"/>
+                                    <stop offset="100%" stop-color="#764ba2"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span>TradeFlow</span>
+                    </div>
+                    <p class="footer-desc">Decentralized liquidity for trade finance. Built on Uniswap V4.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Protocol</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="app.html">Launch App</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Github</a></li>
+                        <li><a href="#">Audit Reports</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Forum</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TradeFlow. Built with Uniswap V4 Hooks.</p>
+                <div class="footer-links">
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="landing-script.js"></script>
+</body>
+</html>
